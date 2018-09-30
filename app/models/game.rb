@@ -29,6 +29,32 @@ class Game < ApplicationRecord
     end
   end
 
+  def create_relationship
+      age_ids = [] # 存放所有符合選定年齡的game.id
+      Age.where(old: (self.min_age .. self.max_age)).find_each do |age|
+      age_ids << age.id
+      self.age_games.destroy_all
+      age_ids.length.times do
+        AgeGame.create!(
+          age_id: age_ids.pop,
+          game_id: self.id,
+          )
+      end
+    end
+
+    unless params[:situation_game][:situation_id] == ""
+      self.situation_games.destroy_all
+      situation_ids = params[:situation_game][:situation_id]
+      # Why can not use arr.campact to remove ""??
+      (situation_ids.length - 1).times do
+        SituationGame.create!(
+          situation_id: situation_ids.pop,
+          game_id: self.id,
+          )
+      end
+    end
+  end
+
   def is_favorited?(user)
     self.favorited_users.include?(user)
   end

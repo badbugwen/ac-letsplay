@@ -1,7 +1,7 @@
 namespace :seed do
  task games: :environment do
     Game.create!(
-      user_id:3,
+      user_id: User.all.sample.id,
       title:"一起來說說", remote_image_url:"https://cw1.tw/CP/images/article/P1398133247012.png",
       url:"",
       tool:"",
@@ -17,7 +17,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:4,
+      user_id: User.all.sample.id,
       title:"毛巾運球", remote_image_url:"",
       url:"https://youtu.be/lvpQUWwfHxk",
       tool:"大浴巾，小球",
@@ -35,7 +35,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:2,
+      user_id: User.all.sample.id,
       title:"九宮格空間概念訓練", remote_image_url:"",
       url:"https://youtu.be/YXnEf_G5E24",
       tool:"透明文件夾, 白紙，彩色點點貼，奇異筆",
@@ -61,7 +61,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:5,
+      user_id: User.all.sample.id,
       title:"中秋親子遊戲~棒打柚子帽",
       remote_image_url:"",
       url:"https://youtu.be/Rnd2GwxUBRM",
@@ -78,7 +78,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:7,
+      user_id: User.all.sample.id,
       title:"沙水好朋友",
       remote_image_url:"",
       url:"",
@@ -99,7 +99,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:1,
+      user_id: User.all.sample.id,
       title:"拿（夾、捏）你千遍，也不厭倦",
       remote_image_url:"",
       url:"",
@@ -120,7 +120,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:1,
+      user_id: User.all.sample.id,
       title:"開動物派對，一起吃飯囉！",
       remote_image_url:"",
       url:"",
@@ -138,7 +138,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:14,
+      user_id: User.all.sample.id,
       title:"0-6個月大親子互動遊戲", remote_image_url:"",
       url:"https://youtu.be/k0jjTwU_Sh8",
       tool:"視覺閃卡，棉花，毛巾",
@@ -153,7 +153,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:21,
+      user_id: User.all.sample.id,
       title:"DIY拼圖積木，提升腦力",
       remote_image_url:"",
       url:"https://youtu.be/_2nRiK9kdYc",
@@ -169,7 +169,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:11,
+      user_id: User.all.sample.id,
       title:"菇仔學習有計–玩遊戲學專心", remote_image_url:"",
       url:"",
       tool:"羽毛",
@@ -187,7 +187,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:9,
+      user_id: User.all.sample.id,
       title:"在車上消耗小孩電力的親子遊戲",
       remote_image_url:"",
       url:"https://youtu.be/g7nkhIQ8ceA",
@@ -204,7 +204,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:1,
+      user_id: User.all.sample.id,
       title:"兒童遊戲-抓雪花", remote_image_url:"",
       url:"",
       tool:"小紙片",
@@ -220,7 +220,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:7,
+      user_id: User.all.sample.id,
       title:"身體變魔術", remote_image_url:"",
       url:"",
       tool:"無",
@@ -255,7 +255,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:9,
+      user_id: User.all.sample.id,
       title:"童話小劇場", remote_image_url:"",
       url:"",
       min_age:3,
@@ -276,7 +276,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:21,
+      user_id: User.all.sample.id,
       title:"找寶藏", remote_image_url:"",
       url:"",
       min_age:4,
@@ -296,7 +296,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:15,
+      user_id: User.all.sample.id,
       title:"買東西嘍！", remote_image_url:"",
       url:"",
       min_age:6,
@@ -316,7 +316,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:21,
+      user_id: User.all.sample.id,
       title:"自己做樂器", remote_image_url:"",
       url:"",
       min_age:6,
@@ -338,7 +338,7 @@ namespace :seed do
         )
 
     Game.create!(
-      user_id:17,
+      user_id: User.all.sample.id,
       title:"扔沙包", remote_image_url:"",
       url:"",
       min_age:6,
