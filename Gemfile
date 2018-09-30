@@ -92,8 +92,9 @@ group :development do
 end
 
 group :production do
-    gem 'pg', '~> 0.18'
-    gem "fog-aws"
+  # gem 'pg', '~> 0.18'
+  gem "fog-aws"
+  gem "mysql2", "< 0.5"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

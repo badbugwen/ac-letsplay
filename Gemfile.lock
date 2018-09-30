@@ -178,6 +178,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    mysql2 (0.4.10)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -197,7 +198,6 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
-    pg (0.21.0)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.5)
@@ -341,8 +341,8 @@ DEPENDENCIES
   jquery-ui-rails!
   kaminari
   listen (>= 3.0.5, < 3.2)
+  mysql2 (< 0.5)
   omniauth-facebook
-  pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.6)
   rails-controller-testing
