@@ -17,20 +17,7 @@ class Game < ApplicationRecord
       tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
       game.tags << tag
     end
-  end
-
-  before_update do
-    game = Game.find_by(id: self.id)
-    game.tags.clear
-    hashtags = self.step.scan(/#[\u4e00-\u9fa5_a-zA-Z0-9]+/)
-    hashtags.map do |hashtag|
-      tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
-      game.tags << tag
-    end
-  end
-
-  def create_relationship
-      age_ids = [] # 存放所有符合選定年齡的game.id
+    age_ids = [] # 存放所有符合選定年齡的game.id
       Age.where(old: (self.min_age .. self.max_age)).find_each do |age|
       age_ids << age.id
       self.age_games.destroy_all
@@ -40,18 +27,16 @@ class Game < ApplicationRecord
           game_id: self.id,
           )
       end
-    end
+    end  
+  end
 
-    unless params[:situation_game][:situation_id] == ""
-      self.situation_games.destroy_all
-      situation_ids = params[:situation_game][:situation_id]
-      # Why can not use arr.campact to remove ""??
-      (situation_ids.length - 1).times do
-        SituationGame.create!(
-          situation_id: situation_ids.pop,
-          game_id: self.id,
-          )
-      end
+  before_update do
+    game = Game.find_by(id: self.id)
+    game.tags.clear
+    hashtags = self.step.scan(/#[\u4e00-\u9fa5_a-zA-Z0-9]+/)
+    hashtags.map do |hashtag|
+      tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
+      game.tags << tag
     end
   end
 
