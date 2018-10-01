@@ -103,9 +103,9 @@ namespace :dev  do
     
   task fake_all: [
     :fake_users,
-    :fake_games,
+    "seed:games",
     :fake_favorites,
     :fake_replies
-    ]  
+    ]
 
 end
