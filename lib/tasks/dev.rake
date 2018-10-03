@@ -124,7 +124,6 @@ namespace :dev  do
     ]
 
   task rebuild_production: [
-    "db:migrate",
     "db:seed",
     :fake_users,
     "seed:games",
