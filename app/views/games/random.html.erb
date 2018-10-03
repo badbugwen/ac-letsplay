@@ -16,19 +16,19 @@
     var msg3 = new SpeechSynthesisUtterance(again, ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg3);
   }
-  $("#again").mouseenter(function(){
+  $("#again").hover(function(){
     var msg4 = new SpeechSynthesisUtterance("再唸一次", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg4);
   });
-    $("#step").mouseenter(function(){
+    $("#step").hover(function(){
     var msg5 = new SpeechSynthesisUtterance("唸遊戲方法", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg5);
   });
-    $("#stop").mouseenter(function(){
+    $("#stop").hover(function(){
     var msg6 = new SpeechSynthesisUtterance("不要說了", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg6);
   });
-    $("#reload").mouseenter(function(){
+    $("#reload").hover(function(){
     var msg7 = new SpeechSynthesisUtterance("看其它遊戲", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg7);
   });
@@ -45,7 +45,7 @@
         } else {
           window._recognition = new webkitSpeechRecognition();
           window._recognition.continuous = true;
-          window._recognition.interimResults = false;
+          window._recognition.interimResults = true;
           window._recognition.lang = "cmn-Hant-TW";
           window._recognition.onstart = function() {
             window._recognition.status = true;
@@ -63,10 +63,10 @@
             result.resultTranscript = event.results[result.resultLength][0].transcript;
             if (event.results[result.resultLength].isFinal === false) {
               console.log(result.resultTranscript);
-              if (result.resultTranscript.indexOf('換') !== -1) {
+              if (result.resultTranscript('換') !== -1) {
                 history.go(0);
               }
-              if (result.resultTranscript.indexOf('玩') !== -1) {
+              if (result.resultTranscript('玩') !== -1) {
                 window._recognition.status = false;
                 window._recognition.stop();
                 var step = '遊戲方式 <%= @step_speech %> ';
