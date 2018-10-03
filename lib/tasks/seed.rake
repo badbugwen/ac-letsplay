@@ -318,7 +318,7 @@ namespace :seed do
             注意事項：孩子年紀還小，所以，「交易」最好在10元以內。
             #數學邏輯, #角色扮演, #社會化
             "
-                  )
+            )
       SituationGame.create!(
             game_id: Game.last.id,
             situation_id: Situation.find_by(condition: "室內").id
@@ -339,7 +339,7 @@ namespace :seed do
             6.好了，現在可以舉辦一個小小的家庭音樂會了。
             注意事項：一定要注意安全，確保罐子的開口不尖利，以免傷到孩子。
             #DIY, #音樂, #律動, #身體知覺
-            ",
+            "
             )
       SituationGame.create!(
             game_id: Game.last.id,
