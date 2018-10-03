@@ -7,7 +7,7 @@
   function toggleReadStep() {
     var readStep = '遊戲方式  <%= @step_speech %>';
     console.log(readStep);
-    var msg2 = new SpeechSynthesisUtterance(readStep, ["zh-TW", 1, 1.5, 0.7]);
+    var msg2 = new SpeechSynthesisUtterance(readStep, ["zh-TW", 1, 1.5, 0.5]);
     window.speechSynthesis.speak(msg2);
   }
   
@@ -71,7 +71,7 @@
                 window._recognition.stop();
                 var step = '遊戲方式 <%= @step_speech %> ';
                 console.log(step);
-                var msg2 = new SpeechSynthesisUtterance(step, ["zh-TW", 1, 1.5, 0.7]);
+                var msg2 = new SpeechSynthesisUtterance(step, ["zh-TW", 1, 1.5, 0.5]);
                 window.speechSynthesis.speak(msg2);
               }
             } else if (event.results[result.resultLength].isFinal === true) {
@@ -82,7 +82,7 @@
         }
       }
       speechRecognition();
-    }, 1000 * 6);
+    }, 1000 * 4);
   }
   </script>
   <% end %>
