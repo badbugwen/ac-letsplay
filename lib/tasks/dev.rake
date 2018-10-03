@@ -122,16 +122,6 @@ namespace :dev  do
     :fake_followships,
     :fake_messages
     ]
-
-  task rebuild_production: [
-    "db:seed",
-    :fake_users,
-    "seed:games",
-    :fake_favorites,
-    :fake_replies,
-    :fake_followships,
-    :fake_messages
-    ]
     
   task fake_all: [
     :fake_users,

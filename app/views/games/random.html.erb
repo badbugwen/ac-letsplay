@@ -20,15 +20,15 @@
     var msg4 = new SpeechSynthesisUtterance("再唸一次", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg4);
   });
-    $("#step").hover(function(){
+    $("#step").mouseenter(function(){
     var msg5 = new SpeechSynthesisUtterance("唸遊戲方法", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg5);
   });
-    $("#stop").hover(function(){
+    $("#stop").mouseover(function(){
     var msg6 = new SpeechSynthesisUtterance("不要說了", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg6);
   });
-    $("#reload").hover(function(){
+    $("#reload").mouseleave(function(){
     var msg7 = new SpeechSynthesisUtterance("看其它遊戲", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg7);
   });
