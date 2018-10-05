@@ -4,12 +4,10 @@ before_action :validates_search_key, only: [:search]
 before_action :authenticate_user!, only: [:new, :favorite]
 
   def index
-    @popular_games_1 = Game.all.order(favorites_count: :desc).limit(4)
-    @popular_games_2 = Game.all.order(favorites_count: :desc).limit(4).offset(4)
-    @popular_games_3 = Game.all.order(favorites_count: :desc).limit(4).offset(8)
-    @latest_games_1 = Game.all.order(favorites_count: :desc).limit(4)
-    @latest_games_2 = Game.all.order(favorites_count: :desc).limit(4).offset(4)
-    @latest_games_3 = Game.all.order(favorites_count: :desc).limit(4).offset(8)
+    @popular_games = Game.all.order(favorites_count: :desc).limit(12)
+    @popular_games_middle = Game.all.order(favorites_count: :desc).limit(4).offset(4)
+    @latest_games = Game.all.order(favorites_count: :desc).limit(12)
+    @latest_games_middle = Game.all.order(favorites_count: :desc).limit(4).offset(4)
   end
 
 
