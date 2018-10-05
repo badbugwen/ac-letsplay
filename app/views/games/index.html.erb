@@ -400,22 +400,22 @@
               </div>
             </div>
             <div class="carousel-inner visible-xs">
-              <div class="item carousel-item active">
-                <div class="row">
+              <div class="item carousel-item active  visible-xs">
+                <div class="row  visible-xs">
                   <% @popular_games.first(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>
                 </div>
               </div>
-              <div class="item carousel-item">
-                <div class="row">
+              <div class="item carousel-item  visible-xs">
+                <div class="row  visible-xs">
                   <% @popular_games_middle.first(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>
                 </div>
               </div>
-              <div class="item carousel-item">
-                <div class="row">
+              <div class="item carousel-item  visible-xs">
+                <div class="row  visible-xs">
                   <% @popular_games_middle.last(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>
@@ -489,22 +489,22 @@
               </div>
             </div>
             <div class="carousel-inner visible-xs">
-              <div class="item carousel-item active">
-                <div class="row">
+              <div class="item carousel-item active  visible-xs">
+                <div class="row  visible-xs">
                   <% @latest_games.first(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>
                 </div>
               </div>
-              <div class="item carousel-item">
-                <div class="row">
+              <div class="item carousel-item  visible-xs">
+                <div class="row  visible-xs">
                   <% @latest_games_middle.first(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>
                 </div>
               </div>
-              <div class="item carousel-item">
-                <div class="row">
+              <div class="item carousel-item  visible-xs">
+                <div class="row  visible-xs">
                   <% @latest_games_middle.last(2).each do |game| %>
                     <%= render partial: "shared/game_thumbnail", locals:{game: game}  %>
                   <% end %>

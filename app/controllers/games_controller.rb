@@ -100,8 +100,8 @@ before_action :authenticate_user!, only: [:new, :favorite]
     @game.user = current_user
 
     if @game.save
-       create_relationship
-      redirect_to games_path #better to js:histroy.go(-2) or games_uer_path
+       create_situation
+      redirect_to game path(@gmae) #better to js:histroy.go(-2) or games_uer_path
       flash[:notice] = "成功張貼新遊戲"
     else
       render :new
@@ -119,7 +119,8 @@ before_action :authenticate_user!, only: [:new, :favorite]
   def update
     if @game.user == current_user || current_user.role == "admin"
       if @game.update(game_params)
-        create_relationship
+        create_age
+        create_situation
         redirect_to game_path(@game) #better to js:histroy.go(-2) or games_uer_path
         flash[:notice] = "成功編輯遊戲"
       else
@@ -167,7 +168,7 @@ private
   	@q = params[:query_string].gsub(/\\|\'|\/|\?/, "") if params[:query_string].present?
   end
 
-  def create_relationship
+  def create_age
       age_ids = [] # 存放所有符合選定年齡的game.id
       Age.where(old: (@game.min_age .. @game.max_age)).find_each do |age|
       age_ids << age.id
@@ -179,7 +180,9 @@ private
           )
       end
     end
+  end
 
+  def create_situation
     unless params[:situation_game][:situation_id] == ""
       @game.situation_games.destroy_all
       situation_ids = params[:situation_game][:situation_id]
