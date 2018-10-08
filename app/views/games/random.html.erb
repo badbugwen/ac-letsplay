@@ -16,10 +16,12 @@
     var msg3 = new SpeechSynthesisUtterance(again, ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg3);
   }
-  $("#again").mouseenter(function(){
+
+  var again = _.debounce(function(){
     var msg4 = new SpeechSynthesisUtterance("再唸一次", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg4);
-  });
+  },2000, true);
+  $("#again").mouseenter(again);
     $("#step").mouseenter(function(){
     var msg5 = new SpeechSynthesisUtterance("唸遊戲方法", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg5);
@@ -70,7 +72,7 @@
           result.resultTranscript = event.results[result.resultLength][0].transcript;
           if(event.results[result.resultLength].isFinal===false){
             console.log(result.resultTranscript);
-              if(result.resultTranscript.indexOf("玩這個還是要換一個")!== -1){
+              if(result.resultTranscript.indexOf("要換一個")!== -1){
                 function speechRecognition(){
           if (!("webkitSpeechRecognition" in window)) {
             alert("本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)");
@@ -106,7 +108,7 @@
                     window._recognition.stop();
                     var step = '遊戲方式 <%= @step_speech %> ';
                     console.log(step);
-                    var msg2 = new SpeechSynthesisUtterance(step, ["zh-TW", 1, 1.5, 0.4]);
+                    var msg2 = new SpeechSynthesisUtterance(step, ["zh-TW", 1, 1.5, 0.3]);
                     window.speechSynthesis.speak(msg2);
                   }
                 } else if (event.results[result.resultLength].isFinal === true) {
@@ -127,7 +129,7 @@
       }
     }
     speechRecognition2();
-  };
+  }
   </script>
   <% end %>
 <section>
