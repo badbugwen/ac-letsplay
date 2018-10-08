@@ -17,27 +17,42 @@
     window.speechSynthesis.speak(msg3);
   }
   
+  var timer;
+
   $("#again").mouseenter(function(){
-    var msg4 = new SpeechSynthesisUtterance("再唸一次", ["zh-TW", 1, 1.5, 0.7]);
-    window.speechSynthesis.speak(msg4);
+    clearTimeout(timer)
+    timer = setTimeout(function(){
+      var msg4 = new SpeechSynthesisUtterance("再唸一次", ["zh-TW", 1, 1.5, 0.7]);
+      window.speechSynthesis.speak(msg4);
+    }, 2000)
   });
-    $("#step").mouseenter(function(){
+
+  $("#step").mouseenter(function(){
+    clearTimeout(timer)
+    timer = setTimeout(function(){  
     var msg5 = new SpeechSynthesisUtterance("唸遊戲方法", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg5);
+  }, 2000)
   });
-    $("#stop").mouseenter(function(){
+
+  $("#stop").mouseenter(function(){
+    clearTimeout(timer)
+    timer = setTimeout(function(){
     var msg6 = new SpeechSynthesisUtterance("不要說了", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg6);
+  }, 2000)
   });
-    $("#reload").mouseenter(function(){
+
+  $("#reload").mouseenter(function(){
+    clearTimeout(timer)
+    timer = setTimeout(function(){
     var msg7 = new SpeechSynthesisUtterance("看其它遊戲", ["zh-TW", 1, 1.5, 0.7]);
     window.speechSynthesis.speak(msg7);
+  }, 2000)
   });
 
   var speech = <%= @speech %>;
   console.log(speech);
-
-
 
   if (speech == 1) {
     var title = '<%= @title_speech %> 玩這個還是要換一個';

@@ -33,4 +33,3 @@
 //= require turbolinks
 //= require waypoints.min
 
-
