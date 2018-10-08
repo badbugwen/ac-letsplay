@@ -2601,7 +2601,7 @@ aside {
 }
 
 .navbar-nav > li.dropdown.megaDropMenu .dropdown-menu {
-  margin: -2px 0 0 auto;
+  margin: -2px auto 0 auto;
   right: 15px;
   border-radius: 5px;
 }
@@ -2618,19 +2618,19 @@ aside {
   .navbar-nav > li.dropdown.megaDropMenu .dropdown-menu {
     left: 15px;
     padding: 10px 5px 0;
-    width: 600px;
+    width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .navbar-nav > li.dropdown.megaDropMenu .dropdown-menu {
-    width: 750px;
+    width: 940px;
   }
 }
 
 @media (min-width: 1200px) {
   .navbar-nav > li.dropdown.megaDropMenu .dropdown-menu {
-    width: 800px;
+    width: 1140px;
   }
 }
 
