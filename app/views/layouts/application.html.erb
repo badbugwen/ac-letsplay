@@ -136,11 +136,10 @@
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
+               <!--search bar when xs-->
               <li class="col-xs-12 visible-xs">
-              <!--search bar when xs-->
               <%= render partial: "shared/search_bar"%>
               <hr>
             </li>
@@ -195,30 +194,6 @@
                 </ul>
               </li>
             <% end %>
-            <li class="dropdown singleDrop color-4">
-              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-theater-masks bg-color-4" aria-hidden="true"></i>
-                <span>適合情境</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-left">
-                <% Situation.all.order(id: :asc).each do |situation| %>
-                  <li><%= link_to situation.condition, situation_path(situation) %></li>
-                <% end %>
-              </ul>
-            </li>
-            <li class="dropdown singleDrop color-3">
-              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-child bg-color-3" aria-hidden="true"></i>
-                <span>適玩年齡</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-left">
-                <li><%= link_to '嬰兒 (0~2歲)', baby_ages_path %></li>
-                <li><%= link_to '幼兒 (3~5歲)', kidergarten_ages_path %></li>
-                <li><%= link_to '低年級(6~7歲)', junior_ages_path %></li>
-                <li><%= link_to '中年級(8~9歲)', middle_ages_path %></li>
-                <li><%= link_to '高年級(10~12歲)', senior_ages_path %></li>
-              </ul>
-            </li>
             <li class="dropdown singleDrop color-1">
               <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-crown bg-color-1" aria-hidden="true"></i>
@@ -229,7 +204,7 @@
                 <li><%= link_to '熱門遊戲', popular_games_path %></li>
               </ul>
             </li>
-            <li class=" dropdown megaDropMenu color-2">
+            <li class=" dropdown megaDropMenu color-2 ">
               <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">
                 <i class="fas fa-hashtag bg-color-2" aria-hidden="true"></i>
                 <span>熱門標簽</span>
@@ -270,6 +245,30 @@
                     <li class=""><a href="/games/hashtag/人際禮儀">人際禮儀</a></li>
                   </ul>
                 </li>
+              </ul>
+            </li>
+            <li class="dropdown singleDrop color-4">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-theater-masks bg-color-4" aria-hidden="true"></i>
+                <span>適合情境</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                <% Situation.all.order(id: :asc).each do |situation| %>
+                  <li><%= link_to situation.condition, situation_path(situation) %></li>
+                <% end %>
+              </ul>
+            </li>
+            <li class="dropdown singleDrop color-3">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-child bg-color-3" aria-hidden="true"></i>
+                <span>適玩年齡</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                <li><%= link_to '嬰兒 (0~2歲)', baby_ages_path %></li>
+                <li><%= link_to '幼兒 (3~5歲)', kidergarten_ages_path %></li>
+                <li><%= link_to '低年級(6~7歲)', junior_ages_path %></li>
+                <li><%= link_to '中年級(8~9歲)', middle_ages_path %></li>
+                <li><%= link_to '高年級(10~12歲)', senior_ages_path %></li>
               </ul>
             </li>
           </ul>
