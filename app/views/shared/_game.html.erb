@@ -69,7 +69,7 @@
         <ul class="list-inline socailLink">
           <hr class="pd-des-container-bottom-line">
           <div class="product-show__social-share-button text-right">
-            <%= social_share_button_tag(game.title, :allow_sites => %w(facebook twitter email google_plus ), :image => game.image, desc:game.title,:url => @url) %>
+            <%= social_share_button_tag(game.title, :image => game.image, desc:game.title,:url => @url, :allow_sites => %w(facebook twitter email google_plus )) %>
           </div>
           <br>
         </ul>
