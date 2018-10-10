@@ -70,10 +70,12 @@
                   <% end %>
                 </li>
               </ul>
-              <p>
-                <i class="fa fa-shapes" aria-hidden="true"></i>
-                <strong><%= game.tool %></strong>
-              </p>
+              <% if game.tool.present? %>
+                <p>
+                  <i class="fa fa-shapes" aria-hidden="true"></i>
+                  <strong><%= game.tool %></strong>
+                </p>
+              <% end %>
               <p><%= truncate(game.step, length: 300) %></p>
               <br>
               <ul class="list-inline btn-yellow btnPart">
