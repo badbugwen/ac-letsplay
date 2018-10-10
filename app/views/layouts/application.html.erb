@@ -6,6 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% if @game.present? %>
+    <meta property="og:description" content="<%= @game.step %>" />
+    <meta property="og:image" content="<%= @game.image %>" />
+  <% end %>
   <title>Let's Play </title>
   <!-- GOOGLE FONT -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
