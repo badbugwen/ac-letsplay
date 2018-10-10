@@ -1,3 +1,5 @@
+<meta property="og:description" content="<%= game.step %>" />
+<meta property="og:image" content="<%= game.image %>" />
 <div class="container">
   <div class="row">
     <div class="col-xs-12 block">
@@ -69,7 +71,7 @@
         <ul class="list-inline socailLink">
           <hr class="pd-des-container-bottom-line">
           <div class="product-show__social-share-button text-right">
-            <%= social_share_button_tag(game.title, :image => game.image, desc:game.title,:url => @url, :allow_sites => %w(facebook twitter email google_plus )) %>
+            <%= social_share_button_tag(game.title, :allow_sites => %w(facebook twitter email google_plus ), desc:game.title,:url => @url) %>
           </div>
           <br>
         </ul>
@@ -92,7 +94,7 @@
             <li>
               <ul class="list-inline socailLink">
                 <div class="product-show__social-share-button">
-                  <%= social_share_button_tag(game.title, :allow_sites => %w(facebook twitter email google_plus ), :image => game.image, desc:game.title,:url => @url) %>
+                  <%= social_share_button_tag(game.title, :allow_sites => %w(facebook twitter email google_plus ), desc:game.title,:url => @url) %>
                 </div>
               </ul>
             </li>  
