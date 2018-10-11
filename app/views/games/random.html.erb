@@ -102,7 +102,7 @@
               if(event.results[result.resultLength].isFinal===true){
                 console.log(result.resultTranscript);
                   if (result.resultTranscript.indexOf('換') !== -1) {
-                    history.go(0);
+                    window.location.reload();
                   }
                   if (result.resultTranscript.indexOf('玩') !== -1) {
                     window._recognition.status = false;
