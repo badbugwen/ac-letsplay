@@ -78,6 +78,7 @@
               <p><%= truncate(game.step, length: 300) %></p>
               <br>
               <ul class="list-inline btn-yellow btnPart">
+                <li><%= render partial: "shared/favorite", locals:{game: game} %> </li>
                 <% if current_user %>
                     <% if @user.email == current_user.email %>
                       <li><%= link_to "編輯遊戲", edit_game_path(game), class: "btn btn-sm btn-success" %></li>
