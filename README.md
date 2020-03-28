@@ -1,7 +1,7 @@
 # Let's PLAY 親子遊戲分享平台
 提案影片 https://youtu.be/Yx10EbCkJa0 <br>
 <h3>Deploy Site:</h3>
-https://www.ac-letsplay.site/    <br>
+https://kidgamebata.herokuapp.com/    <br>
 
 <h3>專案目標用戶:</h3>
 新手爸媽、非嬰幼兒父母的照顧者與暫時陪伴者，以及幼兒本人。<br>
